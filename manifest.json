@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Crimestat Finland",
+  "name": "Crime visualization application on the web",
   "icons": [
     {
       "src": "favicon.ico",
