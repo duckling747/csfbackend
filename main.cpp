@@ -58,11 +58,11 @@ int main(void) {
 			return r.end();
 		}
 	);
-	CROW_ROUTE(app, "/logo192.png")
+	CROW_ROUTE(app, "/android-chrome-192x192.png")
 		.methods(crow::HTTPMethod::GET)
 		(
 			[](crow::response &r) {
-				r.set_static_file_info("logo192.png");
+				r.set_static_file_info("android-chrome-192x192.png.png");
 				return r.end();
 			}
 	);
