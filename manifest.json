@@ -3,7 +3,7 @@
   "name": "Crime visualization application on the web",
   "icons": [
     {
-      "src": "/static/media/favicon.ico",
+      "src": "/favicon.ico",
       "sizes": "48x48",
       "type": "image/x-icon"
     },
