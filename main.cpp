@@ -19,10 +19,11 @@ static int get_port (void) {
 	#endif
 }
 
-static const crow::mustache::template_t templates [3] = {
+static const crow::mustache::template_t templates [4] = {
 	crow::mustache::load("index.html"),
 	crow::mustache::load("about.html"),
-	crow::mustache::load("help.html")
+	crow::mustache::load("help.html"),
+	crow::mustache::load("bonus.html")
 };
 
 int main(void) {
@@ -48,6 +49,13 @@ int main(void) {
 		(
 			[]() {
 				return templates[2].render();
+			}
+	);
+	CROW_ROUTE(app, "/bonus")
+		.methods(crow::HTTPMethod::GET)
+		(
+			[]() {
+				return templates[3].render();
 			}
 	);
 	CROW_ROUTE(app, "/favicon.ico")
