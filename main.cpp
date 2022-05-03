@@ -50,30 +50,6 @@ int main(void) {
 				return templates[2].render();
 			}
 	);
-	CROW_ROUTE(app, "/favicon.ico")
-		.methods(crow::HTTPMethod::GET)
-	(
-		[](crow::response &r) {
-			r.set_static_file_info("favicon.ico");
-			return r.end();
-		}
-	);
-	CROW_ROUTE(app, "/android-chrome-192x192.png")
-		.methods(crow::HTTPMethod::GET)
-		(
-			[](crow::response &r) {
-				r.set_static_file_info("android-chrome-192x192.png.png");
-				return r.end();
-			}
-	);
-	CROW_ROUTE(app, "/manifest.json")
-		.methods(crow::HTTPMethod::GET)
-		(
-			[](crow::response& r) {
-				r.set_static_file_info("manifest.json");
-				return r.end();
-			}
-	);
 
 	app.port(get_port())
 		.use_compression(crow::compression::algorithm::DEFLATE)
