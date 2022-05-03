@@ -58,19 +58,19 @@ int main(void) {
 			return r.end();
 		}
 	);
-	CROW_ROUTE(app, "/logo192.png")
-		.methods(crow::HTTPMethod::GET)
-		(
-			[](crow::response &r) {
-				r.set_static_file_info("logo192.png");
-				return r.end();
-			}
-	);
 	CROW_ROUTE(app, "/manifest.json")
 		.methods(crow::HTTPMethod::GET)
 		(
 			[](crow::response& r) {
 				r.set_static_file_info("manifest.json");
+				return r.end();
+			}
+	);
+	CROW_ROUTE(app, "/robots.txt")
+		.methods(crow::HTTPMethod::GET)
+		(
+			[](crow::response& r) {
+				r.set_static_file_info("robots.txt");
 				return r.end();
 			}
 	);
