@@ -76,7 +76,7 @@ int main(void) {
 	);
 
 	app.port(get_port())
-		.use_compression(crow::compression::algorithm::DEFLATE)
+		.use_compression(crow::compression::algorithm::GZIP)
 		.loglevel(crow::LogLevel::Warning)
 		.multithreaded()
 		.run();
