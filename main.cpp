@@ -50,11 +50,27 @@ int main(void) {
 				return templates[2].render();
 			}
 	);
+	CROW_ROUTE(app, "/favicon.ico")
+		.methods(crow::HTTPMethod::GET)
+	(
+		[](crow::response &r) {
+			r.set_static_file_info("favicon.ico");
+			return r.end();
+		}
+	);
 	CROW_ROUTE(app, "/manifest.json")
 		.methods(crow::HTTPMethod::GET)
 		(
 			[](crow::response& r) {
 				r.set_static_file_info("manifest.json");
+				return r.end();
+			}
+	);
+	CROW_ROUTE(app, "/robots.txt")
+		.methods(crow::HTTPMethod::GET)
+		(
+			[](crow::response& r) {
+				r.set_static_file_info("robots.txt");
 				return r.end();
 			}
 	);
