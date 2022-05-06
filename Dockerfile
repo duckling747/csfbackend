@@ -4,8 +4,8 @@ RUN apt update && apt install -y build-essential libboost-contract-dev git libz-
     git clone https://github.com/duckling747/csfbackend.git && \
     cd ./csfbackend && \
     apt install -y ./crow-v1.0+2.deb && \
-    g++  -pthread -static -DCROW_ENABLE_COMPRESSION -D_FORTIFY_SOURCE=2 \
-    -fstack-protector-strong -fPIE -pie -O3 main.cpp -lz
+    g++  -pthread -static-pie -DCROW_ENABLE_COMPRESSION -D_FORTIFY_SOURCE=2 \
+    -fstack-protector-strong -fPIE -Os main.cpp -lz
 
 FROM scratch
 WORKDIR /app
